@@ -11,6 +11,8 @@ class message_generator():
 
     def __init__(self, numMessages):
         self.numMessages = numMessages
+        f = open("gpgll_messages.txt", 'w')
+        f.close()
 
     def generate_messages(self):
         print("Generating list of {} messages".format(self.numMessages))
@@ -19,8 +21,6 @@ class message_generator():
             self.generate_single_message()
 
     def generate_single_message(self):
-        
-
         # Generate Latitude & Longitude
 
         self.lat_val = round(9000*random.random(), 4)
@@ -52,9 +52,13 @@ class message_generator():
         # Generate Checksum
         self.message = ", ".join(["$GPGLL", str(self.lat_val), self.lat_dir, \
              str(self.long_val), self.long_dir, str(self.utc_time), self.status, self.mode])
-        print(self.message)
+        
+        self.__calculate_checksum()
+        self.message += ('*' + str(self.checksum))
 
         # Write to file output
+        with open("gpgll_messages.txt", 'a') as fdes:
+            fdes.write(self.message + '\n')
 
 
     def __generate_start_time(self):
@@ -81,3 +85,10 @@ class message_generator():
         if utc_time_ms >= 1000:
             utc_time_ms -= 1000
         return [utc_time_h, utc_time_m, utc_time_s, utc_time_ms]
+
+    def __calculate_checksum(self):
+        self.checksum = 0
+        for character in self.message[1:]:
+            self.checksum = self.checksum ^ ord(character)
+
+
