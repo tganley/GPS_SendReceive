@@ -49,9 +49,14 @@ class message_generator():
         else:
             self.mode = 'A'
 
+        # Convert and format values into strings
+        self.lat_val = "{:09.4f}".format(self.lat_val)
+        self.long_val = "{:010.4f}".format(self.long_val)
+        self.utc_time = "{:010.3f}".format(self.utc_time)
+
         # Generate Checksum
-        self.message = ", ".join(["$GPGLL", str(self.lat_val), self.lat_dir, \
-             str(self.long_val), self.long_dir, str(self.utc_time), self.status, self.mode])
+        self.message = ", ".join(["$GPGLL", self.lat_val, self.lat_dir, \
+             self.long_val, self.long_dir, self.utc_time, self.status, self.mode])
         
         self.__calculate_checksum()
         self.message += ('*' + str(self.checksum))
