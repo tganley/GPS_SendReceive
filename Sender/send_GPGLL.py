@@ -6,15 +6,19 @@ Date: November 26, 2023
 
 import random
 import time
+import copy
 
 from receive_GPGLL import message_data
 
 class message_generator():
 
-    def __init__(self, numMessages):
+    def __init__(self, numMessages, error_threshold):
         self.numMessages = numMessages
-        f = open("gpgll_messages.txt", 'w')
-        f.close()
+        f1 = open("Buffers/gpgll_messages.txt", 'w')
+        f1.close()
+        f2 = open("Buffers/gpgll_err_messages.txt", 'w')
+        f2.close()
+        self.error_threshold = error_threshold
 
     def generate_messages(self):
         print("Generating list of {} messages".format(self.numMessages))
@@ -61,16 +65,26 @@ class message_generator():
         message.long_val = "{:010.4f}".format(message.long_val)
         message.utc_time = "{:010.3f}".format(message.utc_time)
 
-        # Generate Checksum
-        message.message = ", ".join(["$GPGLL", message.lat_val, message.lat_dir, \
-             message.long_val, message.long_dir, message.utc_time, message.status, message.mode])
-        
-        self.calculate_checksum(message)
-        message.message += ('*' + message.checksum)
+        # Assemble string message
+        self.__assemble_message(message)
 
-        # Write to file output
-        with open("gpgll_messages.txt", 'a') as fdes:
+        # Assemble version of message with errors
+        msg_with_errors = copy.deepcopy(message)
+        self.__simulate_errors(msg_with_errors)
+        self.__assemble_message(msg_with_errors)
+
+        # Generate and add correct checksum
+        checksum = self.calculate_checksum(message)
+        message.message = message.message_nochk + '*' + message.checksum
+        msg_with_errors.message = msg_with_errors.message_nochk + '*' + message.checksum
+
+        # Write to file output, using the correct messages
+        with open("Buffers/gpgll_messages.txt", 'a') as fdes:
             fdes.write(message.message + '\n')
+
+        # Write to file output, using the correct messages
+        with open("Buffers/gpgll_err_messages.txt", 'a') as fdes:
+            fdes.write(msg_with_errors.message + '\n')
         
         return message
 
@@ -99,12 +113,26 @@ class message_generator():
         if utc_time_ms >= 1000:
             utc_time_ms -= 1000
         return [utc_time_h, utc_time_m, utc_time_s, utc_time_ms]
+    
+    def __assemble_message(self, message):
+        message.message_nochk = ", ".join(["$GPGLL", message.lat_val, message.lat_dir, \
+            message.long_val, message.long_dir, message.utc_time, message.status, message.mode])
+
 
     def calculate_checksum(self, message):
         message.checksum = 0
-        for character in message.message[1:]:
+        for character in message.message_nochk[1:]:
             message.checksum = message.checksum ^ ord(character)
         message.checksum = "{:03}".format(message.checksum)
         return message.checksum
+
+    def __simulate_errors(self, message):
+    # Simulate some chance of discrepancies arising
+        if(random.random() < self.error_threshold):
+            message.lat_val = str(round(float(message.lat_val) + 9000*random.random(),4))
+        if(random.random() < self.error_threshold):
+            message.long_val = str(round(float(message.long_val) + 18000*random.random(), 4))
+        if(random.random() < self.error_threshold):
+            message.checksum = str(int(message.checksum) + random.randrange(0,10))
 
 

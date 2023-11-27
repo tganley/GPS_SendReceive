@@ -12,8 +12,8 @@ class message_receiver():
         message = message_data()
         message.message = line[:-1] # Remove newline character from end
 
-        components, sep, message.checksum = message.message.partition("*")
-        components = components.split(", ")
+        message.message_nochk, sep, message.checksum = message.message.partition("*")
+        components = message.message_nochk.split(", ")
 
         message.lat_val = components[1]
         message.lat_dir = components[2]
@@ -27,7 +27,7 @@ class message_receiver():
 
     def receive_messages(self):
         messages = []
-        with open("gpgll_messages.txt") as fdes:
+        with open("Buffers/gpgll_err_messages.txt") as fdes:
             lines = fdes.readlines()
 
         for i in range(self.numMessages):
@@ -45,6 +45,7 @@ class message_data():
         self.mode = ''
         self.checksum = 0 # Must be =0 for initial checksum condition
         self.message = ''
+        self.message_nochk = ''
     
     def __eq__(self, other) : 
         return self.__dict__ == other.__dict__
