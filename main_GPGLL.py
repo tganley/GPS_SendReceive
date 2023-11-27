@@ -17,7 +17,8 @@ def main():
     generator.generate_messages()
 
     receiver = message_receiver(NUM_MESSAGES)
-    receiver.receive_messages()
+    messages = receiver.receive_messages()
+
 
 
 if __name__ == '__main__':

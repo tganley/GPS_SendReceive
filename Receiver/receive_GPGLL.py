@@ -9,11 +9,36 @@ class message_receiver():
         self.numMessages = numMessages
 
     def parse_message(self):
+        message = message_data()
+
         with open("gpgll_messages.txt") as fdes:
-            message = fdes.readline()
-        components, sep, checksum = message.partition("*")
+            line = fdes.readline()
+        components, sep, message.checksum = line.partition("*")
         components = components.split(", ")
-        print(components)
+
+        message.lat_val = components[0]
+        message.lat_dir = components[1]
+        message.long_val = components[2]
+        message.long_dir = components[3]
+        message.utc_time = components[4]
+        message.status = components[5]
+        message.mode = components[6]
+        return message
+        
 
     def receive_messages(self):
-        self.parse_message()
+        messages = []
+        for i in range(self.numMessages):
+            messages.append(self.parse_message())
+        return messages
+
+class message_data():
+    def __init__(self):
+        self.lat_val = 0
+        self.lat_dir = 'x'
+        self.long_val = 0
+        self.long_dir = 'x'
+        self.utc_time = 0
+        self.status = 'x'
+        self.mode = 'a'
+        self.checksum = 0
