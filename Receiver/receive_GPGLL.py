@@ -35,10 +35,11 @@ class message_receiver():
 class message_data():
     def __init__(self):
         self.lat_val = 0
-        self.lat_dir = 'x'
+        self.lat_dir = ''
         self.long_val = 0
-        self.long_dir = 'x'
+        self.long_dir = ''
         self.utc_time = 0
-        self.status = 'x'
-        self.mode = 'a'
-        self.checksum = 0
+        self.status = ''
+        self.mode = ''
+        self.checksum = 0 # Must be =0 for initial checksum condition
+        self.message = ''

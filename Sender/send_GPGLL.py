@@ -7,6 +7,8 @@ Date: November 26, 2023
 import random
 import time
 
+from receive_GPGLL import message_data
+
 class message_generator():
 
     def __init__(self, numMessages):
@@ -17,53 +19,60 @@ class message_generator():
     def generate_messages(self):
         print("Generating list of {} messages".format(self.numMessages))
         self.utc_time_arr = self.__generate_start_time()
+        message_list = []
         for i in range(self.numMessages):
-            self.generate_single_message()
+            message = self.generate_single_message()
+            message_list.append(message)
+        return message_list
+
 
     def generate_single_message(self):
         # Generate Latitude & Longitude
+        message = message_data()
 
-        self.lat_val = round(9000*random.random(), 4)
-        self.lat_dir = random.choice(['E', 'W'])
+        message.lat_val = round(9000*random.random(), 4)
+        message.lat_dir = random.choice(['E', 'W'])
 
-        self.long_val = round(18000*random.random(), 4)
-        self.long_dir = random.choice(['N', 'S'])
+        message.long_val = round(18000*random.random(), 4)
+        message.long_dir = random.choice(['N', 'S'])
 
         # Update time by adding betwee 0 ms and 1 hour
         self.utc_time_arr = self.__update_time(self.utc_time_arr)
-        self.utc_time = 10000*self.utc_time_arr[0] + 100*self.utc_time_arr[1] + \
-            self. utc_time_arr[2] + self.utc_time_arr[3]
+        message.utc_time = 10000*self.utc_time_arr[0] + 100*self.utc_time_arr[1] + \
+            self.utc_time_arr[2] + self.utc_time_arr[3]
 
         # Generate Mode and Status
         status_number = random.random()
         if status_number <= 0.1:
-            self.status = 'V'
+            message.status = 'V'
         else:
-            self.status = 'A'
+            message.status = 'A'
 
         mode_number = random.random()
         if mode_number <= 0.2:
-            self.mode = 'E'
+            message.mode = 'E'
         elif mode_number <= 0.5:
-            self.mode = 'D'
+            message.mode = 'D'
         else:
-            self.mode = 'A'
+            message.mode = 'A'
 
         # Convert and format values into strings
-        self.lat_val = "{:09.4f}".format(self.lat_val)
-        self.long_val = "{:010.4f}".format(self.long_val)
-        self.utc_time = "{:010.3f}".format(self.utc_time)
+        message.lat_val = "{:09.4f}".format(message.lat_val)
+        message.long_val = "{:010.4f}".format(message.long_val)
+        message.utc_time = "{:010.3f}".format(message.utc_time)
 
         # Generate Checksum
-        self.message = ", ".join(["$GPGLL", self.lat_val, self.lat_dir, \
-             self.long_val, self.long_dir, self.utc_time, self.status, self.mode])
+        message.message = ", ".join(["$GPGLL", message.lat_val, message.lat_dir, \
+             message.long_val, message.long_dir, message.utc_time, message.status, message.mode])
         
-        self.__calculate_checksum()
-        self.message += ('*' + str(self.checksum))
+        self.__calculate_checksum(message)
+        message.message += ('*' + str(message.checksum))
 
         # Write to file output
         with open("gpgll_messages.txt", 'a') as fdes:
-            fdes.write(self.message + '\n')
+            fdes.write(message.message + '\n')
+        
+        return message
 
 
     def __generate_start_time(self):
@@ -91,9 +100,8 @@ class message_generator():
             utc_time_ms -= 1000
         return [utc_time_h, utc_time_m, utc_time_s, utc_time_ms]
 
-    def __calculate_checksum(self):
-        self.checksum = 0
-        for character in self.message[1:]:
-            self.checksum = self.checksum ^ ord(character)
+    def __calculate_checksum(self, message):
+        for character in message.message[1:]:
+            message.checksum = message.checksum ^ ord(character)
 
 

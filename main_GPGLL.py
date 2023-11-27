@@ -14,10 +14,10 @@ NUM_MESSAGES = 10
 def main():
     print("GPGLL Send & Receive Test")
     generator = message_generator(NUM_MESSAGES)
-    generator.generate_messages()
+    sent_messages = generator.generate_messages()
 
     receiver = message_receiver(NUM_MESSAGES)
-    messages = receiver.receive_messages()
+    received_messages = receiver.receive_messages()
 
 
 
