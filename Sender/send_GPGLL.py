@@ -65,7 +65,7 @@ class message_generator():
         message.message = ", ".join(["$GPGLL", message.lat_val, message.lat_dir, \
              message.long_val, message.long_dir, message.utc_time, message.status, message.mode])
         
-        self.__calculate_checksum(message)
+        self.calculate_checksum(message)
         message.message += ('*' + message.checksum)
 
         # Write to file output
@@ -101,8 +101,10 @@ class message_generator():
         return [utc_time_h, utc_time_m, utc_time_s, utc_time_ms]
 
     def calculate_checksum(self, message):
+        message.checksum = 0
         for character in message.message[1:]:
             message.checksum = message.checksum ^ ord(character)
-        message.checksum = str(message.checksum)
+        message.checksum = "{:03}".format(message.checksum)
+        return message.checksum
 
 
