@@ -18,7 +18,7 @@ def test_compareSentAndReceived(sent_messages, received_messages):
     for i in range(NUM_MESSAGES):
         if sent_messages[i] == received_messages[i]:
             num_successes += 1
-    print("Successfully received {} messages out of {} sent!\n".format(num_successes, NUM_MESSAGES))
+    print("{}/{} messages were successfully received\n".format(num_successes, NUM_MESSAGES))
 
 def test_validateChecksums(received_messages):
     print("\nVerifying checksums in received messages")
@@ -28,7 +28,17 @@ def test_validateChecksums(received_messages):
         recalc_checksum = message_generator.calculate_checksum(0, received_messages[i])
         if received_messages[i].checksum == recalc_checksum:
             num_successes += 1
-    print("{} checksums out of {} were correct".format(num_successes, NUM_MESSAGES))
+    print("{}/{} checksums were correct\n".format(num_successes, NUM_MESSAGES))
+
+def test_validateLatLongs(received_messages):
+    print("\nVerifying latitude and longitude values")
+    print("------------------------------------------")
+    num_successes = 0
+    for i in range(NUM_MESSAGES):
+        if 0 <= float(received_messages[i].lat_val) <= 9000 and 0 <= float(received_messages[i].long_val) <= 18000:
+            num_successes += 1
+    print("{}/{} lat/long pairs were valid\n".format(num_successes, NUM_MESSAGES))
+
 
 
 def main():
@@ -41,6 +51,7 @@ def main():
 
     test_compareSentAndReceived(sent_messages, received_messages)
     test_validateChecksums(received_messages)
+    test_validateLatLongs(received_messages)
 
 
 
