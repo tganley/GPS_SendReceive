@@ -10,8 +10,9 @@ class message_receiver():
 
     def parse_message(self, line):
         message = message_data()
+        message.message = line[:-1] # Remove newline character from end
 
-        components, sep, message.checksum = line.partition("*")
+        components, sep, message.checksum = message.message.partition("*")
         components = components.split(", ")
 
         message.lat_val = components[1]

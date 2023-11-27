@@ -66,7 +66,7 @@ class message_generator():
              message.long_val, message.long_dir, message.utc_time, message.status, message.mode])
         
         self.__calculate_checksum(message)
-        message.message += ('*' + str(message.checksum))
+        message.message += ('*' + message.checksum)
 
         # Write to file output
         with open("gpgll_messages.txt", 'a') as fdes:
@@ -100,8 +100,9 @@ class message_generator():
             utc_time_ms -= 1000
         return [utc_time_h, utc_time_m, utc_time_s, utc_time_ms]
 
-    def __calculate_checksum(self, message):
+    def calculate_checksum(self, message):
         for character in message.message[1:]:
             message.checksum = message.checksum ^ ord(character)
+        message.checksum = str(message.checksum)
 
 
