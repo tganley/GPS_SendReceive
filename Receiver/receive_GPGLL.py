@@ -8,28 +8,29 @@ class message_receiver():
     def __init__(self, numMessages):
         self.numMessages = numMessages
 
-    def parse_message(self):
+    def parse_message(self, line):
         message = message_data()
 
-        with open("gpgll_messages.txt") as fdes:
-            line = fdes.readline()
         components, sep, message.checksum = line.partition("*")
         components = components.split(", ")
 
-        message.lat_val = components[0]
-        message.lat_dir = components[1]
-        message.long_val = components[2]
-        message.long_dir = components[3]
-        message.utc_time = components[4]
-        message.status = components[5]
-        message.mode = components[6]
+        message.lat_val = components[1]
+        message.lat_dir = components[2]
+        message.long_val = components[3]
+        message.long_dir = components[4]
+        message.utc_time = components[5]
+        message.status = components[6]
+        message.mode = components[7]
         return message
         
 
     def receive_messages(self):
         messages = []
+        with open("gpgll_messages.txt") as fdes:
+            lines = fdes.readlines()
+
         for i in range(self.numMessages):
-            messages.append(self.parse_message())
+            messages.append(self.parse_message(lines[i]))
         return messages
 
 class message_data():
@@ -43,3 +44,6 @@ class message_data():
         self.mode = ''
         self.checksum = 0 # Must be =0 for initial checksum condition
         self.message = ''
+    
+    def __eq__(self, other) : 
+        return self.__dict__ == other.__dict__
