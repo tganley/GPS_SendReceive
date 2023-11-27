@@ -1,0 +1,348 @@
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068376.1886094
+Generating 40 messages
+Error threshold: 0.1
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 4: sent $GPGLL, 5910.9056, E, 01320.7344, N, 041859.233, A, A*121
+ but received $GPGLL, 11403.4229, E, 01320.7344, N, 041859.233, A, A*121
+ERROR in message 7: sent $GPGLL, 8847.7808, W, 08520.6754, N, 091447.883, A, A*108
+ but received $GPGLL, 13287.53, W, 08520.6754, N, 091447.883, A, A*108
+ERROR in message 10: sent $GPGLL, 0518.3382, W, 08773.7764, N, 113020.756, A, A*097
+ but received $GPGLL, 1320.3254, W, 08773.7764, N, 113020.756, A, A*097
+ERROR in message 24: sent $GPGLL, 7190.7393, W, 02873.2115, S, 223763.704, A, A*124
+ but received $GPGLL, 7190.7393, W, 12364.4018, S, 223763.704, A, A*124
+ERROR in message 37: sent $GPGLL, 3723.7785, E, 11735.8439, N, 161536.159, A, D*120
+ but received $GPGLL, 10705.6097, E, 11735.8439, N, 161536.159, A, D*120
+35/40 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 4: Calculated checksum = 068, but received 121
+ERROR in message 7: Calculated checksum = 081, but received 108
+ERROR in message 10: Calculated checksum = 103, but received 097
+ERROR in message 24: Calculated checksum = 122, but received 124
+ERROR in message 37: Calculated checksum = 075, but received 120
+35/40 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 4: (lat, long) = (11403.4229, 01320.7344) is outside of bounds
+ERROR in message 7: (lat, long) = (13287.53, 08520.6754) is outside of bounds
+ERROR in message 37: (lat, long) = (10705.6097, 11735.8439) is outside of bounds
+37/40 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068404.6983461
+Generating 40 messages
+Error threshold: 0.05
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 17: sent $GPGLL, 8160.7529, E, 13768.2154, N, 130252.475, A, E*115
+ but received $GPGLL, 13728.3218, E, 13768.2154, N, 130252.475, A, E*115
+ERROR in message 19: sent $GPGLL, 2210.9845, E, 07535.6887, S, 172968.035, A, A*101
+ but received $GPGLL, 6724.4915, E, 07535.6887, S, 172968.035, A, A*101
+ERROR in message 22: sent $GPGLL, 2902.7755, E, 03954.8536, N, 193063.544, A, A*120
+ but received $GPGLL, 2902.7755, E, 16613.0148, N, 193063.544, A, A*120
+ERROR in message 31: sent $GPGLL, 1815.4263, W, 12682.0350, S, 112174.563, A, D*116
+ but received $GPGLL, 8917.1528, W, 12682.0350, S, 112174.563, A, D*116
+ERROR in message 35: sent $GPGLL, 8372.6502, W, 10901.4807, S, 140663.379, A, A*112
+ but received $GPGLL, 8372.6502, W, 20839.158, S, 140663.379, A, A*112
+ERROR in message 37: sent $GPGLL, 5347.8285, E, 09369.0175, N, 164926.813, A, A*121
+ but received $GPGLL, 5347.8285, E, 22906.7531, N, 164926.813, A, A*121
+ERROR in message 38: sent $GPGLL, 4119.9043, W, 00019.8704, N, 175879.213, A, D*107
+ but received $GPGLL, 4119.9043, W, 15601.5089, N, 175879.213, A, D*107
+33/40 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 17: Calculated checksum = 066, but received 115
+ERROR in message 19: Calculated checksum = 106, but received 101
+ERROR in message 22: Calculated checksum = 117, but received 120
+ERROR in message 31: Calculated checksum = 115, but received 116
+ERROR in message 35: Calculated checksum = 078, but received 112
+ERROR in message 37: Calculated checksum = 112, but received 121
+ERROR in message 38: Calculated checksum = 111, but received 107
+33/40 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 17: (lat, long) = (13728.3218, 13768.2154) is outside of bounds
+ERROR in message 35: (lat, long) = (8372.6502, 20839.158) is outside of bounds
+ERROR in message 37: (lat, long) = (5347.8285, 22906.7531) is outside of bounds
+37/40 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068418.2641482
+Generating 40 messages
+Error threshold: 0.05
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 14: sent $GPGLL, 0245.4150, E, 00345.9689, S, 065248.141, A, A*098
+ but received $GPGLL, 0245.4150, E, 8316.4386, S, 065248.141, A, A*098
+ERROR in message 18: sent $GPGLL, 2784.9452, E, 13839.4537, N, 105525.856, A, D*119
+ but received $GPGLL, 8086.8125, E, 13839.4537, N, 105525.856, A, D*119
+ERROR in message 23: sent $GPGLL, 0459.1609, W, 05226.0083, S, 134060.298, A, A*123
+ but received $GPGLL, 6181.0973, W, 05226.0083, S, 134060.298, A, A*123
+ERROR in message 32: sent $GPGLL, 7729.0981, E, 15178.8197, S, 022824.290, A, A*103
+ but received $GPGLL, 10265.7906, E, 15178.8197, S, 022824.290, A, A*103
+ERROR in message 39: sent $GPGLL, 5369.0238, E, 16452.4099, S, 103846.051, A, A*104
+ but received $GPGLL, 8435.9615, E, 16452.4099, S, 103846.051, A, A*104
+35/40 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 14: Calculated checksum = 091, but received 098
+ERROR in message 18: Calculated checksum = 124, but received 119
+ERROR in message 23: Calculated checksum = 126, but received 123
+ERROR in message 32: Calculated checksum = 084, but received 103
+ERROR in message 39: Calculated checksum = 105, but received 104
+35/40 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 32: (lat, long) = (10265.7906, 15178.8197) is outside of bounds
+39/40 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068425.5536373
+Generating 40 messages
+Error threshold: 0.05
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 33: sent $GPGLL, 8109.0266, E, 16449.1097, N, 180375.157, A, D*116
+ but received $GPGLL, 8109.0266, E, 31856.9637, N, 180375.157, A, D*116
+39/40 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 33: Calculated checksum = 119, but received 116
+39/40 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 33: (lat, long) = (8109.0266, 31856.9637) is outside of bounds
+39/40 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068435.6332428
+Generating 40 messages
+Error threshold: 0.5
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 0: sent $GPGLL, 7979.7314, E, 12795.7799, S, 165554.168, A, A*100
+ but received $GPGLL, 13336.8137, E, 21533.4005, S, 165554.168, A, A*100
+ERROR in message 1: sent $GPGLL, 7180.7005, W, 13695.3989, S, 183048.349, V, D*099
+ but received $GPGLL, 15465.788, W, 25405.9933, S, 183048.349, V, D*099
+ERROR in message 2: sent $GPGLL, 4829.3370, W, 11660.5971, S, 204523.559, A, A*119
+ but received $GPGLL, 8469.3391, W, 11660.5971, S, 204523.559, A, A*119
+ERROR in message 3: sent $GPGLL, 7441.7482, E, 12372.5325, N, 214746.822, A, A*120
+ but received $GPGLL, 10341.0229, E, 25601.9432, N, 214746.822, A, A*120
+ERROR in message 4: sent $GPGLL, 2384.6902, W, 08153.6159, N, 211905.144, A, A*096
+ but received $GPGLL, 7855.169, W, 25040.2595, N, 211905.144, A, A*096
+ERROR in message 5: sent $GPGLL, 4644.9851, E, 10966.9943, N, 225740.244, A, A*117
+ but received $GPGLL, 11874.1748, E, 10966.9943, N, 225740.244, A, A*117
+ERROR in message 6: sent $GPGLL, 3393.6688, W, 04093.8488, S, 225516.744, A, A*126
+ but received $GPGLL, 3393.6688, W, 6122.216, S, 225516.744, A, A*126
+ERROR in message 7: sent $GPGLL, 7247.8852, W, 03538.4295, S, 000141.476, V, A*102
+ but received $GPGLL, 14279.3103, W, 03538.4295, S, 000141.476, V, A*102
+ERROR in message 8: sent $GPGLL, 7209.7035, E, 06769.6980, N, 011124.181, A, A*114
+ but received $GPGLL, 7209.7035, E, 16080.548, N, 011124.181, A, A*114
+ERROR in message 12: sent $GPGLL, 6077.1656, W, 06141.7268, S, 044530.295, A, A*117
+ but received $GPGLL, 6081.3741, W, 06141.7268, S, 044530.295, A, A*117
+ERROR in message 13: sent $GPGLL, 8018.7656, E, 16081.5329, N, 044617.695, A, A*115
+ but received $GPGLL, 10366.7497, E, 16081.5329, N, 044617.695, A, A*115
+ERROR in message 15: sent $GPGLL, 8388.8557, E, 16079.0427, N, 071826.141, A, A*123
+ but received $GPGLL, 11161.5242, E, 16079.0427, N, 071826.141, A, A*123
+ERROR in message 16: sent $GPGLL, 1117.5416, W, 08936.6651, N, 080261.227, A, A*097
+ but received $GPGLL, 8166.3701, W, 20301.359, N, 080261.227, A, A*097
+ERROR in message 17: sent $GPGLL, 1656.0254, W, 00910.5168, S, 093051.797, A, E*112
+ but received $GPGLL, 1656.0254, W, 6389.7379, S, 093051.797, A, E*112
+ERROR in message 18: sent $GPGLL, 3594.4352, E, 01076.6530, S, 100937.799, V, A*115
+ but received $GPGLL, 8182.1187, E, 01076.6530, S, 100937.799, V, A*115
+ERROR in message 20: sent $GPGLL, 2331.5560, E, 01228.2733, S, 130942.463, A, D*100
+ but received $GPGLL, 2331.5560, E, 11676.8934, S, 130942.463, A, D*100
+ERROR in message 21: sent $GPGLL, 8540.0440, W, 08968.9648, N, 153257.201, A, D*111
+ but received $GPGLL, 8540.0440, W, 12312.6053, N, 153257.201, A, D*111
+ERROR in message 22: sent $GPGLL, 8264.1080, E, 01204.4019, N, 170546.839, A, D*117
+ but received $GPGLL, 8264.1080, E, 3695.3458, N, 170546.839, A, D*117
+ERROR in message 23: sent $GPGLL, 2971.2438, W, 14845.3691, N, 185367.056, A, A*103
+ but received $GPGLL, 2971.2438, W, 25731.1589, N, 185367.056, A, A*103
+ERROR in message 24: sent $GPGLL, 0545.4523, E, 05291.9318, S, 194745.271, A, D*103
+ but received $GPGLL, 9343.5861, E, 11295.5885, S, 194745.271, A, D*103
+ERROR in message 25: sent $GPGLL, 2884.2588, W, 03554.1048, N, 211047.394, A, E*107
+ but received $GPGLL, 2884.2588, W, 7052.7065, N, 211047.394, A, E*107
+ERROR in message 26: sent $GPGLL, 5825.9134, E, 01823.8285, N, 230129.992, A, A*122
+ but received $GPGLL, 10791.6263, E, 01823.8285, N, 230129.992, A, A*122
+ERROR in message 27: sent $GPGLL, 0611.2889, W, 03842.2598, N, 233058.388, A, D*100
+ but received $GPGLL, 0611.2889, W, 21571.8366, N, 233058.388, A, D*100
+ERROR in message 28: sent $GPGLL, 3199.5889, W, 09639.1466, S, 233359.095, A, A*121
+ but received $GPGLL, 3199.5889, W, 16448.4748, S, 233359.095, A, A*121
+ERROR in message 29: sent $GPGLL, 7615.3605, W, 17560.8161, S, 231257.009, A, D*116
+ but received $GPGLL, 7615.3605, W, 32852.2921, S, 231257.009, A, D*116
+ERROR in message 30: sent $GPGLL, 5377.3536, W, 07841.7973, S, 013035.625, A, A*118
+ but received $GPGLL, 9648.4342, W, 8998.9111, S, 013035.625, A, A*118
+ERROR in message 31: sent $GPGLL, 3031.4076, W, 13024.2618, N, 020259.414, A, E*111
+ but received $GPGLL, 10361.0664, W, 13024.2618, N, 020259.414, A, E*111
+ERROR in message 33: sent $GPGLL, 6303.8440, E, 10726.4728, S, 044459.466, A, D*104
+ but received $GPGLL, 14390.1033, E, 10726.4728, S, 044459.466, A, D*104
+ERROR in message 34: sent $GPGLL, 3769.2256, W, 05279.1196, S, 065857.683, A, D*121
+ but received $GPGLL, 12365.168, W, 05279.1196, S, 065857.683, A, D*121
+ERROR in message 36: sent $GPGLL, 5067.4840, E, 09546.4038, S, 062450.487, A, D*098
+ but received $GPGLL, 5240.7536, E, 14816.1549, S, 062450.487, A, D*098
+ERROR in message 38: sent $GPGLL, 7850.0357, W, 14085.0151, N, 082648.717, A, A*108
+ but received $GPGLL, 11702.9904, W, 14085.0151, N, 082648.717, A, A*108
+ERROR in message 39: sent $GPGLL, 5772.1818, E, 13309.2224, S, 083953.810, A, A*096
+ but received $GPGLL, 7752.0015, E, 13309.2224, S, 083953.810, A, A*096
+8/40 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 0: Calculated checksum = 083, but received 100
+ERROR in message 1: Calculated checksum = 110, but received 099
+ERROR in message 2: Calculated checksum = 124, but received 119
+ERROR in message 3: Calculated checksum = 065, but received 120
+ERROR in message 4: Calculated checksum = 093, but received 096
+ERROR in message 5: Calculated checksum = 067, but received 117
+ERROR in message 7: Calculated checksum = 095, but received 102
+ERROR in message 8: Calculated checksum = 077, but received 114
+ERROR in message 12: Calculated checksum = 121, but received 117
+ERROR in message 13: Calculated checksum = 079, but received 115
+ERROR in message 15: Calculated checksum = 072, but received 123
+ERROR in message 16: Calculated checksum = 082, but received 097
+ERROR in message 17: Calculated checksum = 076, but received 112
+ERROR in message 18: Calculated checksum = 116, but received 115
+ERROR in message 20: Calculated checksum = 105, but received 100
+ERROR in message 21: Calculated checksum = 096, but received 111
+ERROR in message 22: Calculated checksum = 077, but received 117
+ERROR in message 23: Calculated checksum = 097, but received 103
+ERROR in message 24: Calculated checksum = 102, but received 103
+ERROR in message 25: Calculated checksum = 085, but received 107
+ERROR in message 26: Calculated checksum = 064, but received 122
+ERROR in message 29: Calculated checksum = 121, but received 116
+ERROR in message 30: Calculated checksum = 073, but received 118
+ERROR in message 31: Calculated checksum = 090, but received 111
+ERROR in message 33: Calculated checksum = 088, but received 104
+ERROR in message 34: Calculated checksum = 125, but received 121
+ERROR in message 36: Calculated checksum = 104, but received 098
+ERROR in message 38: Calculated checksum = 086, but received 108
+ERROR in message 39: Calculated checksum = 100, but received 096
+11/40 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 0: (lat, long) = (13336.8137, 21533.4005) is outside of bounds
+ERROR in message 1: (lat, long) = (15465.788, 25405.9933) is outside of bounds
+ERROR in message 3: (lat, long) = (10341.0229, 25601.9432) is outside of bounds
+ERROR in message 4: (lat, long) = (7855.169, 25040.2595) is outside of bounds
+ERROR in message 5: (lat, long) = (11874.1748, 10966.9943) is outside of bounds
+ERROR in message 7: (lat, long) = (14279.3103, 03538.4295) is outside of bounds
+ERROR in message 13: (lat, long) = (10366.7497, 16081.5329) is outside of bounds
+ERROR in message 15: (lat, long) = (11161.5242, 16079.0427) is outside of bounds
+ERROR in message 16: (lat, long) = (8166.3701, 20301.359) is outside of bounds
+ERROR in message 23: (lat, long) = (2971.2438, 25731.1589) is outside of bounds
+ERROR in message 24: (lat, long) = (9343.5861, 11295.5885) is outside of bounds
+ERROR in message 26: (lat, long) = (10791.6263, 01823.8285) is outside of bounds
+ERROR in message 27: (lat, long) = (0611.2889, 21571.8366) is outside of bounds
+ERROR in message 29: (lat, long) = (7615.3605, 32852.2921) is outside of bounds
+ERROR in message 30: (lat, long) = (9648.4342, 8998.9111) is outside of bounds
+ERROR in message 31: (lat, long) = (10361.0664, 13024.2618) is outside of bounds
+ERROR in message 33: (lat, long) = (14390.1033, 10726.4728) is outside of bounds
+ERROR in message 34: (lat, long) = (12365.168, 05279.1196) is outside of bounds
+ERROR in message 38: (lat, long) = (11702.9904, 14085.0151) is outside of bounds
+21/40 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________
+GPGLL Send & Receive Test
+Timestamp: 1701068466.77172
+Generating 100 messages
+Error threshold: 0.1
+Comparing sent and received messages
+------------------------------------------
+ERROR in message 4: sent $GPGLL, 4893.4530, W, 04079.7041, N, 234857.601, A, E*107
+ but received $GPGLL, 10955.5813, W, 04079.7041, N, 234857.601, A, E*107
+ERROR in message 10: sent $GPGLL, 0530.3834, E, 04969.8414, N, 034437.465, V, A*111
+ but received $GPGLL, 0530.3834, E, 21405.1284, N, 034437.465, V, A*111
+ERROR in message 11: sent $GPGLL, 1531.5705, W, 13917.7855, N, 051849.527, A, A*105
+ but received $GPGLL, 1531.5705, W, 28694.6825, N, 051849.527, A, A*105
+ERROR in message 25: sent $GPGLL, 4515.9883, E, 16038.4018, S, 193733.695, A, D*105
+ but received $GPGLL, 4515.9883, E, 32826.0358, S, 193733.695, A, D*105
+ERROR in message 39: sent $GPGLL, 8685.8057, W, 12939.3856, N, 104174.075, A, A*111
+ but received $GPGLL, 8685.8057, W, 26223.0503, N, 104174.075, A, A*111
+ERROR in message 40: sent $GPGLL, 0764.9338, E, 02567.7231, S, 122769.742, A, A*105
+ but received $GPGLL, 6437.6475, E, 02567.7231, S, 122769.742, A, A*105
+ERROR in message 41: sent $GPGLL, 2301.1310, W, 00546.7917, N, 131680.603, A, D*106
+ but received $GPGLL, 7591.9702, W, 00546.7917, N, 131680.603, A, D*106
+ERROR in message 44: sent $GPGLL, 3959.2315, W, 11843.3049, S, 175040.949, A, A*119
+ but received $GPGLL, 5654.3241, W, 11843.3049, S, 175040.949, A, A*119
+ERROR in message 46: sent $GPGLL, 6102.1595, W, 01734.3985, N, 193362.397, A, D*100
+ but received $GPGLL, 6102.1595, W, 14884.2409, N, 193362.397, A, D*100
+ERROR in message 52: sent $GPGLL, 8013.6771, E, 01250.1945, N, 022129.805, A, A*124
+ but received $GPGLL, 8013.6771, E, 12208.8583, N, 022129.805, A, A*124
+ERROR in message 61: sent $GPGLL, 0499.4982, E, 05350.3531, S, 084587.859, A, D*103
+ but received $GPGLL, 0499.4982, E, 11698.0219, S, 084587.859, A, D*103
+ERROR in message 62: sent $GPGLL, 2533.9391, E, 07787.9754, S, 090364.802, A, A*099
+ but received $GPGLL, 9544.1117, E, 07787.9754, S, 090364.802, A, A*099
+ERROR in message 71: sent $GPGLL, 0616.0753, W, 14957.0638, S, 182085.960, A, E*120
+ but received $GPGLL, 0616.0753, W, 28242.9838, S, 182085.960, A, E*120
+ERROR in message 77: sent $GPGLL, 6541.2589, W, 13259.8269, S, 005159.345, A, A*117
+ but received $GPGLL, 6541.2589, W, 14089.8129, S, 005159.345, A, A*117
+ERROR in message 80: sent $GPGLL, 8368.3473, W, 13504.9564, N, 042095.132, A, D*111
+ but received $GPGLL, 8368.3473, W, 18877.7482, N, 042095.132, A, D*111
+ERROR in message 82: sent $GPGLL, 5427.9216, E, 05828.2597, N, 060139.746, A, D*114
+ but received $GPGLL, 5549.6932, E, 05828.2597, N, 060139.746, A, D*114
+ERROR in message 88: sent $GPGLL, 0612.3592, W, 01365.4945, N, 135897.150, A, A*107
+ but received $GPGLL, 0612.3592, W, 5793.7952, N, 135897.150, A, A*107
+ERROR in message 91: sent $GPGLL, 6285.2923, W, 08880.9363, S, 191592.944, A, E*120
+ but received $GPGLL, 9780.6644, W, 08880.9363, S, 191592.944, A, E*120
+ERROR in message 96: sent $GPGLL, 6219.0763, W, 08795.9314, N, 024298.508, A, A*097
+ but received $GPGLL, 10832.0632, W, 08795.9314, N, 024298.508, A, A*097
+81/100 messages were successfully received
+
+Verifying checksums in received messages
+------------------------------------------
+ERROR in message 4: Calculated checksum = 088, but received 107
+ERROR in message 10: Calculated checksum = 105, but received 111
+ERROR in message 11: Calculated checksum = 099, but received 105
+ERROR in message 25: Calculated checksum = 107, but received 105
+ERROR in message 39: Calculated checksum = 102, but received 111
+ERROR in message 40: Calculated checksum = 107, but received 105
+ERROR in message 41: Calculated checksum = 111, but received 106
+ERROR in message 44: Calculated checksum = 114, but received 119
+ERROR in message 46: Calculated checksum = 108, but received 100
+ERROR in message 61: Calculated checksum = 109, but received 103
+ERROR in message 62: Calculated checksum = 108, but received 099
+ERROR in message 71: Calculated checksum = 127, but received 120
+ERROR in message 77: Calculated checksum = 122, but received 117
+ERROR in message 80: Calculated checksum = 106, but received 111
+ERROR in message 82: Calculated checksum = 121, but received 114
+ERROR in message 88: Calculated checksum = 087, but received 107
+ERROR in message 91: Calculated checksum = 125, but received 120
+ERROR in message 96: Calculated checksum = 080, but received 097
+82/100 checksums were correct
+
+Verifying latitude and longitude values
+------------------------------------------
+ERROR in message 4: (lat, long) = (10955.5813, 04079.7041) is outside of bounds
+ERROR in message 10: (lat, long) = (0530.3834, 21405.1284) is outside of bounds
+ERROR in message 11: (lat, long) = (1531.5705, 28694.6825) is outside of bounds
+ERROR in message 25: (lat, long) = (4515.9883, 32826.0358) is outside of bounds
+ERROR in message 39: (lat, long) = (8685.8057, 26223.0503) is outside of bounds
+ERROR in message 62: (lat, long) = (9544.1117, 07787.9754) is outside of bounds
+ERROR in message 71: (lat, long) = (0616.0753, 28242.9838) is outside of bounds
+ERROR in message 80: (lat, long) = (8368.3473, 18877.7482) is outside of bounds
+ERROR in message 91: (lat, long) = (9780.6644, 08880.9363) is outside of bounds
+ERROR in message 96: (lat, long) = (10832.0632, 08795.9314) is outside of bounds
+90/100 lat/long pairs were valid
+End of GPGLL Send & Receive Test
+________________________________________________________________________________________________________________

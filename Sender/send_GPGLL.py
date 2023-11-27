@@ -21,7 +21,6 @@ class message_generator():
         self.error_threshold = error_threshold
 
     def generate_messages(self):
-        print("Generating list of {} messages".format(self.numMessages))
         self.utc_time_arr = self.__generate_start_time()
         message_list = []
         for i in range(self.numMessages):
